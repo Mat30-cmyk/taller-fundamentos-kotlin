@@ -1,39 +1,43 @@
 package ejercicios
 
 fun ejecutarBloque2() {
-    println("========================================")
-    println("   BLOQUE 2: NULL SAFETY")
-    println("========================================")
+    header("BLOQUE 2: NULL SAFETY")
 
-    // 6. El Opcional
-    val apodo: String? = null
-    println("========================================")
-    println("6. Apodo: $apodo")
-    println("========================================")
+    // Nullable
+    val nickName: String? = null
+    println("Alias actual: $nickName")
+    line()
 
-    // 7. El Operador Elvis
-    val resultadoApodo = apodo ?: "Sin apodo"
-    println("========================================")
-    println("7. Elvis dice: $resultadoApodo")
-    println("========================================")
+    // Elvis
+    val displayName = nickName ?: "Usuario sin alias"
+    println("Valor final: $displayName")
+    line()
 
-    // 8. Llamada Segura
-    println("========================================")
-    println("8. Longitud del apodo (segura): ${apodo?.length}")
-    println("========================================")
+    // Safe call
+    val nickLength = nickName?.length
+    println("Longitud del alias: $nickLength")
+    line()
 
-    // 9. Uso de Let
-    val correo: String? = "ejemplo@correo.com"
-    println("========================================")
-    print("9. ")
-    correo?.let {
-        println("Correo enviado a $it")
-    } ?: println("No hay correo para enviar")
-    println("========================================")
+    // let
+    val email: String? = "ejemplo@correo.com"
+    print("Email -> ")
+    email?.let { mail ->
+        println("Enviando mensaje a $mail")
+    } ?: println("No se pudo enviar, email nulo")
+    line()
 
-    // 10. Aserción No Nula
-    val valorNoNulo: String? = "Kotlin"
+    // Not-null assertion
+    val language: String? = "Kotlin"
+    println("Tamaño del texto: ${language!!.length}")
+    line()
+}
+
+fun header(text: String) {
     println("========================================")
-    println("10. Longitud con !!: ${valorNoNulo!!.length}")
+    println("   $text")
+    println("========================================")
+}
+
+fun line() {
     println("========================================")
 }

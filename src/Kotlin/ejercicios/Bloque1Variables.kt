@@ -1,47 +1,53 @@
 package ejercicios
 
-object Constants {
-    const val VELOCIDAD_LUZ = 299792458
+object GlobalConfig {
+    const val LIGHT_SPEED = 299_792_458
 }
 
 fun ejecutarBloque1() {
-    println("========================================")
-    println("   BLOQUE 1: VARIABLES")
-    println("========================================")
+    printHeader("BLOQUE 1: VARIABLES")
 
-    // 1. Mi Perfil de Usuario
-    val nombre = "Mateo Betancur"
-    var ciudad = "Nariño - Ant"
-    println("========================================")
-    println("1. Nombre: $nombre, Ciudad inicial: $ciudad")
-    ciudad = "Medellín"
-    println("   Ciudad cambiada a: $ciudad")
-    println("========================================")
+    // Perfil
+    val userName = "Mateo Betancur"
+    var location = "Nariño - Ant"
+    println("Nombre: $userName | Ubicación inicial: $location")
 
-    // 2. Calculadora de mi edad
-    val anioNacimiento = 2007
-    val anioActual = 2026
-    val edad = anioActual - anioNacimiento
-    println("========================================")
-    println("2. Mi Año nacimiento: $anioNacimiento, Mi Edad aproximada: $edad")
-    println("========================================")
+    location = "Medellín"
+    println("Ubicación actualizada: $location")
+    separator()
 
-    // 3. Tipos Explícitos
-    val precioCoche: Double = 25000.50
-    val pesoNaranja: Float = 0.25f
-    val poblacionMundial: Long = 8200000000L
-    println("========================================")
-    println("3. Mi Coche: $$precioCoche, Una Naranja: ${pesoNaranja}kg, Población Total del mundo: $poblacionMundial")
-    println("========================================")
+    // Edad
+    val birthYear = 2007
+    val currentYear = 2026
+    val userAge = currentYear - birthYear
 
-    // 4. Inferencia
-    val estaLloviendo = false
-    println("========================================")
-    println("4. Oe, ¿Está lloviendo? $estaLloviendo (Tipo inferido: ${estaLloviendo::class.simpleName})")
-    println("========================================")
+    println("Nacimiento: $birthYear | Edad estimada: $userAge")
+    separator()
 
-    // 5. Constantes Reales
+    // Tipos explícitos
+    val carPrice: Double = 25000.50
+    val orangeWeight: Float = 0.25f
+    val worldPopulation: Long = 8_200_000_000L
+
+    println("Auto: $$carPrice | Naranja: ${orangeWeight}kg | Población: $worldPopulation")
+    separator()
+
+    // Inferencia
+    val isRaining = false
+    println("¿Está lloviendo? $isRaining -> Tipo: ${isRaining::class.simpleName}")
+    separator()
+
+    // Constante
+    println("Velocidad de la luz: ${GlobalConfig.LIGHT_SPEED} m/s")
+    separator()
+}
+
+fun printHeader(title: String) {
     println("========================================")
-    println("5. Velocidad de la luz: ${Constants.VELOCIDAD_LUZ} m/s")
+    println("   $title")
+    println("========================================")
+}
+
+fun separator() {
     println("========================================")
 }

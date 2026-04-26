@@ -1,59 +1,60 @@
 package ejercicios
 
 fun ejecutarBloque3() {
-    println("========================================")
-    println("   BLOQUE 3: CONDICIONALES     ")
-    println("========================================")
+    showHeader("BLOQUE 3: CONDICIONALES")
 
-    // 11. Mayoría de Edad
-    println("========================================")
-    val edad = 20
-    if (edad >= 18) {
-        println("11. Puede votar")
-    } else {
-        println("11. No puede votar")
+    // Mayor de edad
+    val age = 20
+    println(if (age >= 18) "11. Tiene permiso para votar" else "11. No cumple la edad")
+    divider()
+
+    // If como expresión
+    val grade = 4.2
+    val status = if (grade >= 3.0) "Aprobado" else "Reprobado"
+    println("12. Estado: $status")
+    divider()
+
+    // Semáforo
+    val trafficLight = "Rojo"
+    println("13. Estado del semáforo: $trafficLight")
+
+    val action = when (trafficLight) {
+        "Rojo" -> "Detenerse"
+        "Amarillo" -> "Precaución"
+        "Verde" -> "Avanzar"
+        else -> "No reconocido"
     }
-    println("========================================")
+    println(action)
+    divider()
 
-    // 12. If como Expresión
-    val nota = 4.2
-    val resultado = if (nota >= 3.0) "Aprobado" else "Reprobado"
-    println("========================================")
-    println("12. Resultado académico: $resultado")
-    println("========================================")
-
-    // 13. Semáforo
-    val colorSemaforo = "Rojo"
-    println("========================================")
-    print("13. Semáforo en $colorSemaforo: ")
-    println("========================================")
-    when (colorSemaforo) {
-        "Rojo" -> println("Detengase")
-        "Amarillo" -> println("Hagale Pero con cuidado")
-        "Verde" -> println("Continue su camino")
-        else -> println("Color inválido")
+    // Temperatura
+    val temp = 22
+    val climate = when {
+        temp < 15 -> "Hace frío"
+        temp in 15..25 -> "Clima templado"
+        else -> "Hace calor"
     }
+    println("14. $climate")
+    divider()
 
-    // 14. Rangos en When
-    val temperatura = 22
-    println("========================================")
-    print("14. Temperatura $temperatura°C: ")
-    println("========================================")
-    when {
-        temperatura < 15 -> println("Que Frío!!")
-        temperatura in 15..25 -> println("Esta Templado")
-        temperatura > 25 -> println("Que Calor!!")
+    // Tipo de dato
+    val randomValue: Any = "Soy un String"
+    val typeResult = when (randomValue) {
+        is String -> "Cadena de texto"
+        is Int -> "Número entero"
+        is Boolean -> "Booleano"
+        else -> "Desconocido"
     }
+    println("15. Tipo detectado: $typeResult")
+    divider()
+}
 
-    // 15. Verificación de Tipo
-    val variableAnonima: Any = "Soy un String"
+fun showHeader(title: String) {
     println("========================================")
-    print("15. Tipo de dato: ")
+    println("   $title")
     println("========================================")
-    when (variableAnonima) {
-        is String -> println("Es un String")
-        is Int -> println("Es un Int")
-        is Boolean -> println("Es un Booleano")
-        else -> println("Tipo desconocido")
-    }
+}
+
+fun divider() {
+    println("========================================")
 }
