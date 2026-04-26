@@ -14,7 +14,7 @@ fun convertUsdToCop(amount: Double): Double {
     return amount * exchangeRate
 }
 
-fun runFunctionExamples() {
+fun ejecutarBloque5() {
     printTitle("BLOQUE 5: FUNCIONES")
 
     // Saludo

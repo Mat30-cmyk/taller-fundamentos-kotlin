@@ -1,6 +1,8 @@
 package Kotlin
 
 import ejercicios.*
+import ejercicios.funciones.ejecutarBloque5
+import ejercicios.collections.ejecutarBloque6
 
 fun main() {
     println("INICIANDO TALLER DE KOTLIN")
